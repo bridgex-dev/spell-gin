@@ -3,7 +3,7 @@ module github.com/bridgex-dev/spell-gin
 go 1.19
 
 require (
-	github.com/bridgex-dev/spell v0.1.0
+	github.com/bridgex-dev/spell v0.1.6
 	github.com/gin-gonic/gin v1.8.1
 	github.com/gwatts/gin-adapter v1.0.0
 )
