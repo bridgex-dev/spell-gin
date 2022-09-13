@@ -10,9 +10,9 @@ type ResponseWriter struct {
 	spell *spell.Context
 }
 
-func (w *ResponseWriter) WriteHeaderNow() {
+func (w *ResponseWriter) WriteHeader(status int) {
 	_ = w.spell.WriteHeader()
-	w.ResponseWriter.WriteHeaderNow()
+	w.ResponseWriter.WriteHeader(status)
 }
 
 func NewResponseWriter(r *gin.Context, spell *spell.Context) *ResponseWriter {
