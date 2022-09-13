@@ -24,7 +24,7 @@ type Context struct {
 	Spell *spell.Context
 }
 
-func NewContext(r *gin.Context, spell *spell.Context) *Context {
+func NewHybridContext(r *gin.Context, spell *spell.Context) *Context {
 	// wrap WriteHeaderNow to write spell headers
 	r.Writer = NewResponseWriter(r, spell)
 
