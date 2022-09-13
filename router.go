@@ -69,10 +69,7 @@ func (r *RouterGroup) wrap(handlers ...HandlerFunc) []gin.HandlerFunc {
 	res := make([]gin.HandlerFunc, 0, len(handlers))
 	for _, h := range handlers {
 		res = append(res, func(c *gin.Context) {
-			h(&Context{
-				Context: c,
-				Spell:   r.spell.GetContext(c.Request),
-			})
+			h(NewContext(c, r.spell.GetContext(c.Request)))
 		})
 	}
 
